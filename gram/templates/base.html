@@ -1,3 +1,4 @@
+{% load bootstrap4 %}
 {% load static %}
 
 <html>
@@ -15,6 +16,7 @@
   {%endif%}
 
   {% block styles %}
+    {% bootstrap_css %}
   {% endblock %}
 
 </head>
@@ -25,6 +27,9 @@
     {% block content %}
     {%endblock%}
   </div>
+  {% block scripts %}
+  {% bootstrap_javascript %}
+{% endblock %}
 
 
 </body>
