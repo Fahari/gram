@@ -7,7 +7,7 @@
         <!-- Adding a search form  -->
   <div class="col-sm-4 col-md-4 navbar-right">
 
-    <form class="form-inline nav-search-form" role="search">
+    <form class="form-inline nav-search-form" role="search" action="{% url 'search_users' %}">
 
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search" style="height: 30px;border-top-right-radius: 0;border-bottom-right-radius: 0" name="user_search">
