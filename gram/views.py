@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from .models import Image
 
 # Create your views here.
 @login_required(login_url = "accounts/login")
 def welcome(request):
-    return render(request,'instagram.html')
+    images=Image.objects.all()
+    return render(request,'instagram.html',{"images":images})
 
 def search_users(request):
 

@@ -6,7 +6,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="wraps">
-      {% for photo in image %}
+      {% for photo in images %}
       <div class="col-md-4">
         <img style=" margin-top: 20px; margin-bottom: 20px; width:400px; height:400px;" src="{{photo.image.url}}"  alt="Image" data-toggle="modal" data-target="#{{photo.id}}">
 
