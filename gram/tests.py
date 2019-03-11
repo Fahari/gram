@@ -15,3 +15,5 @@ class ImageTestClass(TestCase):
         self.photo.save_image()
         images = Image.objects.all()
         self.assertTrue(len(images) > 0)
+    def tearDown(self):
+        Image.objects.all().delete()
