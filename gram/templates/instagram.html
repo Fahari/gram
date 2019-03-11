@@ -2,7 +2,52 @@
 
 {% block content %}
 {{block.super}}
-<div class="wraps">
-  <h1> Welcome to Kevin-Gram</h1>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="wraps">
+      {% for photo in image %}
+      <div class="col-md-4">
+        <img style=" margin-top: 20px; margin-bottom: 20px; width:400px; height:400px;" src="{{photo.image.url}}"  alt="Image" data-toggle="modal" data-target="#{{photo.id}}">
+
+        <!-- Image Details modal -->
+
+        <div class="modal fade bd-example-modal-lg" id="{{photo.id}}" tabindex="-1" role="dialog" aria-labelledby="imageName" aria-hidden="true">
+          <div style="max-width:70%; max-height:50%; padding-top:100px;" class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="imageName">{{photo.name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img src="{{photo.image.url}}" class="img-fluid" alt="Image">
+                <br>
+                {{photo.caption}}
+              </div>
+              <div class="modal-footer">
+                <input class="form-control input-lg" type="text" value="https:{{photo.image.url}}" id="{{photo}}-url">
+                <button class="btn btn-outline-info" onclick="copyUrl('{{photo.id}}-url')">Copy Image Url</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <script type="text/javascript">
+        function copyUrl(element) {
+          var myVar = document.getElementById(element)
+          myVar.select();
+          document.execCommand('copy')
+        }
+      </script>
+      {% empty %}
+      <h3 class="text-center">There are No Images</h3>
+      {% endfor %}
+
+    </div>
+  </div>
 </div>
+
 {% endblock %}
