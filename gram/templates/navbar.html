@@ -4,6 +4,22 @@
         <a href="{% url 'welcome' %}">Instagram</a>
       </div>
       <ul>
+        <!-- Adding a search form  -->
+  <div class="col-sm-4 col-md-4 navbar-right">
+
+    <form class="form-inline nav-search-form" role="search">
+
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" style="height: 30px;border-top-right-radius: 0;border-bottom-right-radius: 0" name="user_search">
+        <div class="input-group-btn">
+          <button class="btn nav-search-btn" type="submit" style="height: 30px;overflow: hidden; border-top-left-radius: 0;border-bottom-left-radius: 0;"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <!-- search form end -->
+
         <li><a href="#">location</a></li>
         <li><a href="#">activity</a></li>
         <li><a href="#">Profile</a></li>
