@@ -1,6 +1,6 @@
-# Museum
+# Gram
 #### 11 March 2019
-#### By **Kironji Kevin**
+#### By **Kironji Kevin**:smiley:
 ## Description
 Gram is a clone application to the popular photo sharing application, Instagram. It's a version similar to but not the same as the original application. It's my version of Instagram and its simple design delivers quite well. Gram has a layout that mimics the original application, and its functionality is the same. A new user needs to sign up to the application and then successfully login. One can then create a profile and start sharing his/her photo experiences.
 A user can follow another user of interest, like their photos and even comment on them.
