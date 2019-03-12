@@ -22,7 +22,7 @@ A user can upload his/her photos and view them in his/her created profile.
 5. Heroku for deployment
 ```
 ## Application link
-click [here](https://#.herokuapp.com/)
+click [here](https://kevgram.herokuapp.com/)
 ## Set up and Installation
 To access this application on your command line, you need to clone it.
 `git clone https://github.com/Fahari/gram.git`
