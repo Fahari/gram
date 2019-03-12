@@ -43,6 +43,6 @@ $ sudo apt-get install postgresql postgresql-contrib libpq-dev
 No known bugs as at the completion of the project.
 ## Support and contact details
 Feel free to reach me at karonjekevin67@gmail.com
-### License
+## License
 The project is under the [MIT](https://github.com/Fahari/museum/blob/master/LICENSE) licence
 Copyright (c) 2019 **Kironji Kevin**
