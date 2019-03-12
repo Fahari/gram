@@ -4,7 +4,7 @@
 ## Description
 Gram is a clone application to the popular photo sharing application, Instagram. It's a version similar to but not the same as the original application. It's my version of Instagram and its simple design delivers quite well. Gram has a layout that mimics the original application, and its functionality is the same. A new user needs to sign up to the application and then successfully login. One can then create a profile and start sharing his/her photo experiences.
 A user can follow another user of interest, like their photos and even comment on them.
-A user can upload his/her photos and be able to view them in his/her created profile.
+A user can upload his/her photos and view them in his/her created profile.
 ### User Stories
 ```
 1. A user can sign in to the application and start using it.
