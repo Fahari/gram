@@ -1,12 +1,21 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from .models import Image
+from .form import SignupForm
 
 # Create your views here.
 @login_required(login_url = "accounts/login")
-def welcome(request):
+def home(request):
     images=Image.objects.all()
     return render(request,'instagram.html',{"images":images})
+
+def welcome(request):
+    # images=Image.objects.all()
+    if request.user.is_authenticated():
+        return redirect('home')
+    else:
+        form = SignupForm()
+    return render(request,'registration/login.html', {"form":form})
 
 def search_users(request):
 
