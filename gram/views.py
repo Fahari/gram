@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
-from .models import Image
+from . models import *
 from .form import SignupForm
 
 # Create your views here.
@@ -16,6 +16,14 @@ def welcome(request):
     else:
         form = SignupForm()
     return render(request,'registration/login.html', {"form":form})
+
+@login_required(login_url='/accounts/login/')
+def profile(request):
+    current_user = request.user
+    pics = Image.objects.all()
+    profile = Profile.objects.all()
+
+    return render(request, 'registration/profile.html',locals())
 
 def search_users(request):
 
