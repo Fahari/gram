@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from . models import *
-from .form import SignupForm
+from .form import *
 
 # Create your views here.
 @login_required(login_url = "accounts/login")
@@ -19,9 +19,17 @@ def welcome(request):
 
 @login_required(login_url='/accounts/login/')
 def profile(request):
+    u_form = UserUpdateForm()
+    p_form = ProfileUpdateForm()
     current_user = request.user
     pics = Image.objects.all()
     profile = Profile.objects.all()
+
+    context = {
+            'u_form': u_form,
+            'p_form': p_form
+
+    }
 
     return render(request, 'registration/profile.html',locals())
 
