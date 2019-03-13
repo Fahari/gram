@@ -6,4 +6,5 @@ urlpatterns=[
     url('^search/', views.search_users, name='search_users'),
     url('^home/', views.home, name='home'),
     url(r'^profile/', views.profile, name='profile'),
+    
 ]

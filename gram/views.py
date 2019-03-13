@@ -46,6 +46,32 @@ def profile(request):
 
     return render(request, 'registration/profile.html',locals())
 
+def comment(request,image_id):
+   current_user=request.user
+   image = Image.objects.get(id=image_id)
+   profile_user = User.objects.get(username=current_user)
+   the_comments = Comment.objects.all()
+   print(the_comments)
+   if request.method == 'POST':
+       form = CommentForm(request.POST)
+       if form.is_valid():
+           comment_itself = form.save(commit=False)
+           comment_itself.image = image
+           comment_itself.commenter = request.user
+
+           comment_itself.save()
+
+           print(the_comments)
+
+
+       return redirect(instagram)
+
+   else:
+       form = CommentForm()
+
+   return render(request, 'comment.html', locals())
+
+
 def search_users(request):
 
     if 'user' in request.GET and request.GET["user"]:

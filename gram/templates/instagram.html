@@ -5,23 +5,70 @@
 <br>
 <br>
 
-<div class="w3-container" style="margin-left:170px;">
-  {% for photo in images%}
-  <div class="w3-card" style="width:50%;">
-    <header class="w3-container w3-light-grey">
-      <img src="./media/images/beautiful-beauty-curly-897322_1.jpg" alt="Avatar" class="w3-left w3-circle" width="50px;" height="50px;">
-    </header>
-    <hr>
-    <div class="w3-container">
-      <img src="{{photo.image.url}}" style="width:100%">
+<div class="container" >
+  <div class="row">
+    <div class="col col-md-1 w3-hide-small">
+
     </div>
-    <hr>
-    <footer class="w3-container">
-      <h5>comments</h5>
-    </footer>
+    <div class="col col-md-7">
+      {% for photo in images%}
+      <div class="w3-card" style="width:100%;">
+        <header class="w3-container w3-light-grey">
+          <img src="./media/images/beautiful-beauty-curly-897322_1.jpg" alt="Avatar" class="w3-left w3-circle" width="50px;" height="50px;">
+        </header>
+        <hr>
+        <div class="w3-container">
+          <img src="{{photo.image.url}}" style="width:100%">
+        </div>
+        <hr>
+        <footer class="w3-container">
+          <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <i class="far fa-heart" style="color: black !important;font-size: 30px;opacity: 0.7;"
+                                        aria-hidden="true"></i></a>
+                                &nbsp; &nbsp;
+                                <a href="#">
+                                    <i class="far fa-comment" aria-hidden="true" style="color:black;font-size: 30px;opacity: 0.7;font-weight: 5px !important;"></i></a>
+                                <hr>
+
+                            </li>
+                        </ul>
+
+
+                        <h5 style=" font-size: 20px !important;"><strong>{{image.profile.username}}</strong>
+                            {{image.caption}}</h5>
+                        <p>{{image.count_likes}} likes</p>
+                        <p class=""> {{image.comment.count}} comments </p>
+                        <div class="card-body">
+                            {% for comment in comments %}
+                            {% if comment.image_id == image.id%}
+                            <br>
+                            <h5 style=" font-size: 20px !important;"><strong>{{comment.commenter}}</strong>
+                                {{comment.comment_itself}}</h5>
+                            <hr>
+
+                            {% endif %}
+                            {% endfor %}
+                            <div class="comment-input-wrapper">
+                                    <form action="#" method="post">
+                                        {% csrf_token %}
+                                        <input class="add-comment" name="comment_itself" id="comment{{image.id}}" type="text" placeholder="Comment on this image....">
+                                    </form>
+                                </div>
+                        </div>
+        </footer>
+      </div>
+      <br><br><br><br>
+      {%endfor%}
+
+    </div>
+    <div class="col col-md-4 w3-hide-small">
+
+    </div>
+
   </div>
-  <br><br><br><br>
-  {%endfor%}
+
 </div>
 <!-- <div class="row" style="display:flex;justify-content:space-evenly">
      <div class="col-md-5">

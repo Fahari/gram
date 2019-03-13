@@ -23,3 +23,22 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username} Profile'
+
+class Comment(models.Model):
+    image = models.ForeignKey(Image, blank=True, on_delete=models.CASCADE, related_name='comment')
+    commenter = models.ForeignKey(User, blank=True)
+    comment_itself = models.TextField()
+
+    def save_comment(self):
+        self.save()
+
+    def delete_comment(self):
+        self.delete()
+
+    @classmethod
+    def get_comments_on_image(cls, id):
+        the_comments = Comment.objects.filter(image__pk=id)
+        return the_comments
+
+    def __str__(self):
+        return self.comment_itself

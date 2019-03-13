@@ -21,3 +21,8 @@ class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['image',]
+
+class CommentsForm(forms.ModelForm):
+    class Meta:
+       model = Comment
+       exclude = ['image','commenter']
