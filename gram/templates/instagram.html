@@ -14,7 +14,8 @@
       {% for photo in images%}
       <div class="w3-card" style="width:100%;">
         <header class="w3-container w3-light-grey">
-          <img src="./media/images/beautiful-beauty-curly-897322_1.jpg" alt="Avatar" class="w3-left w3-circle" width="50px;" height="50px;">
+          <a href="/profile"><img src="{{ user.profile.image.url }}" alt="Avatar" class="w3-left w3-circle" width="50px;" height="50px;"></a>
+          <a href="/profile" style="text-decoration:none;" ><h5 class="account-heading">{{ user.username }}</h5></a>
         </header>
         <hr>
         <div class="w3-container">
